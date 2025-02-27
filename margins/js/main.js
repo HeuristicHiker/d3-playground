@@ -41,14 +41,13 @@ d3.json("data/buildings.json").then((data) => {
     .attr("transform", `translate(0, ${HEIGHT})`)
     .call(xAxisCall)
     .selectAll("text")
-      .attr("y", "10")
-      .attr("x", "-5")
-      .attr("text-anchor", "end")
-      .attr("transform", "rotate(-40)");
+    .attr("y", "10")
+    .attr("x", "-5")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-40)");
 
-    const yAxisCall = d3.axisLeft(y);
+  const yAxisCall = d3.axisLeft(y);
   g.append("g").attr("class", "y axis").call(yAxisCall);
-
 
   const rects = g.selectAll("rect").data(data);
 
@@ -61,3 +60,4 @@ d3.json("data/buildings.json").then((data) => {
     .attr("height", (d) => y(d.height))
     .attr("fill", "grey");
 });
+
